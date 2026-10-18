@@ -1,10 +1,10 @@
 name: Web CI
 
 on:
+  # Pull requests only. Every change reaches main through a pull request
+  # whose required checks already ran this suite on the same tree, so a push
+  # run would only repeat it (CI-COST rule 1).
   pull_request:
-  push:
-    branches:
-      - main
 
 jobs:
   web:
